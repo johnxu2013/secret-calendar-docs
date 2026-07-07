@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Calendar - Developer Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .tagline {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h3 {
+            font-size: 1.3em;
+            margin: 25px 0 15px;
+            color: #764ba2;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05em;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+        
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 0.95em;
+            margin: 0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .tech-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .footer {
+            background: #f8f9ff;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #764ba2;
+        }
+        
+        .icon {
+            font-size: 1.3em;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">📅</div>
+            <h1>Secret Calendar</h1>
+            <p class="tagline">Your Private Calendar Experience on iOS</p>
+        </div>
+        
+        <div class="content">
+            <!-- About Section -->
+            <div class="section">
+                <h2><span class="icon">ℹ️</span> About Secret Calendar</h2>
+                <p>
+                    Secret Calendar is a beautifully designed, privacy-focused calendar application for iOS. 
+                    Built with modern Apple technologies, it provides a seamless and intuitive way to manage 
+                    your events, tasks, and schedules while keeping your data completely private and secure 
+                    on your device.
+                </p>
+                <p>
+                    The app combines the simplicity of traditional calendaring with powerful features like 
+                    recurring events, voice notes, smart notifications, and integration with your iPhone's 
+                    built-in Calendar app.
+                </p>
+            </div>
+            
+            <!-- Key Features Section -->
+            <div class="section">
+                <h2><span class="icon">✨</span> Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>📝 Event Management</h4>
+                        <p>Create, edit, and organize events with detailed information including location, notes, and categories.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🔄 Recurring Events</h4>
+                        <p>Support for daily, weekly, bi-weekly, monthly, and yearly recurring events with flexible completion tracking.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🎤 Voice Notes</h4>
+                        <p>Attach voice recordings to events for quick capture of thoughts and details.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>⏰ Smart Alarms</h4>
+                        <p>Customizable daily alarm notifications to remind you of upcoming and incomplete tasks.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🔔 Event Reminders</h4>
+                        <p>Flexible reminder system with options from event time to weeks in advance.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>📱 iPhone Calendar Integration</h4>
+                        <p>View events from your device calendars alongside Secret Calendar events in one unified view.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🏷️ Categories</h4>
+                        <p>Organize events with custom categories, each with its own color coding and visibility controls.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>✅ Task Completion</h4>
+                        <p>Mark events as complete with optional completion notes, including support for individual recurring event instances.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🔍 Search & Filter</h4>
+                        <p>Powerful search functionality to quickly find events by title, location, or notes.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🎨 Beautiful Design</h4>
+                        <p>Modern, clean interface with customizable accent colors and color-coded events.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>📍 Location Support</h4>
+                        <p>Add locations to events with integration to Apple Maps for directions.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>🔒 Complete Privacy</h4>
+                        <p>All data stored locally on your device using SwiftData. No cloud sync, no tracking.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Details Section -->
+            <div class="section">
+                <h2><span class="icon">⚙️</span> Technical Details</h2>
+                
+                <h3>Built With Modern Apple Technologies</h3>
+                <div class="tech-stack">
+                    <span class="tech-badge">Swift 6.0+</span>
+                    <span class="tech-badge">SwiftUI</span>
+                    <span class="tech-badge">SwiftData</span>
+                    <span class="tech-badge">Swift Concurrency</span>
+                    <span class="tech-badge">EventKit</span>
+                    <span class="tech-badge">AVFoundation</span>
+                    <span class="tech-badge">UserNotifications</span>
+                    <span class="tech-badge">StoreKit 2</span>
+                </div>
+                
+                <h3>Architecture Highlights</h3>
+                <ul>
+                    <li><strong>SwiftData Models:</strong> Modern data persistence with automatic synchronization and relationships</li>
+                    <li><strong>MVVM Pattern:</strong> Clear separation of concerns with ObservableObject managers</li>
+                    <li><strong>Async/Await:</strong> Modern Swift concurrency for smooth performance</li>
+                    <li><strong>Local Storage:</strong> All data remains on-device for maximum privacy</li>
+                    <li><strong>EventKit Integration:</strong> Seamless access to device calendars with proper authorization</li>
+                    <li><strong>Rich Notifications:</strong> Smart notification system with customizable timing</li>
+                </ul>
+                
+                <h3>System Requirements</h3>
+                <ul>
+                    <li>iOS 17.0 or later</li>
+                    <li>iPhone compatible</li>
+                    <li>Notifications permission for reminders and alarms</li>
+                    <li>Calendar permission for device calendar integration (optional)</li>
+                    <li>Microphone permission for voice notes (optional)</li>
+                </ul>
+            </div>
+            
+            <!-- Privacy & Security Section -->
+            <div class="section">
+                <h2><span class="icon">🔐</span> Privacy & Security</h2>
+                <p>
+                    <strong>Secret Calendar is designed with privacy as a core principle:</strong>
+                </p>
+                <ul>
+                    <li><strong>No Cloud Sync:</strong> All data stays on your device</li>
+                    <li><strong>No Analytics:</strong> We don't collect usage data or track user behavior</li>
+                    <li><strong>No Account Required:</strong> Start using immediately without sign-up</li>
+                    <li><strong>Local Storage Only:</strong> Events, notes, and voice recordings never leave your device</li>
+                    <li><strong>Calendar Access:</strong> Device calendar integration is optional and read-only</li>
+                    <li><strong>Minimal Permissions:</strong> Only requests permissions for features you actually use</li>
+                </ul>
+                <p>
+                    For complete privacy details, please see our <a href="privacy-policy.html">Privacy Policy</a>.
+                </p>
+            </div>
+            
+            <!-- Developer Contact Section -->
+            <div class="section">
+                <h2><span class="icon">📧</span> Contact & Support</h2>
+                <div class="contact-info">
+                    <p><strong>Developer:</strong> [Your Name/Company Name]</p>
+                    <p><strong>Email:</strong> <a href="mailto:support@example.com">support@example.com</a></p>
+                    <p><strong>Website:</strong> <a href="https://example.com" target="_blank">https://example.com</a></p>
+                    <p style="margin-top: 20px; margin-bottom: 0;">
+                        We'd love to hear from you! Whether you have questions, feedback, or need support, 
+                        feel free to reach out. We typically respond within 24-48 hours.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Version History Section -->
+            <div class="section">
+                <h2><span class="icon">📋</span> Version History</h2>
+                <h3>Version 1.0.0</h3>
+                <ul>
+                    <li>Initial release</li>
+                    <li>Beautiful monthly calendar view</li>
+                    <li>Event creation and management</li>
+                    <li>Recurring events support</li>
+                    <li>Voice notes feature</li>
+                    <li>Smart alarm system</li>
+                    <li>iPhone Calendar integration</li>
+                    <li>Categories and color coding</li>
+                    <li>Search functionality</li>
+                    <li>Task completion tracking</li>
+                </ul>
+            </div>
+            
+            <!-- Acknowledgments Section -->
+            <div class="section">
+                <h2><span class="icon">🙏</span> Acknowledgments</h2>
+                <p>
+                    Secret Calendar is built entirely with Apple's native frameworks and follows 
+                    Apple's Human Interface Guidelines. Special thanks to the Swift and SwiftUI 
+                    communities for their continuous innovation and support.
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                &copy; 2026 Secret Calendar. All rights reserved.<br>
+                <a href="privacy-policy.html">Privacy Policy</a> | 
+                <a href="mailto:support@example.com">Support</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
